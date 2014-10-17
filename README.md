@@ -17,15 +17,15 @@ protobuf to access the crash data.
 	Processing /path/to/crash/report.crash
 
 	{'Application Info': {'identifier': u'<REDACTED>',
-	                      'version': u'1.0'},
-	 'Excpetion Info': {'name': u'NSUnknownKeyException',
-	                    'reason': u'[<SOSettingsViewController 0x9beefd0> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key lblOs.'},
-	 'Signal Info': {'address': 51738962L, 'code': u'#0', 'name': u'SIGABRT'},
-	 'System Info': {'architecture': 0,
-	                 'operating_system': 2,
-	                 'os_build': u'13C1021',
+	                      'version': u'1000'},
+	 'Excpetion Info': {'name': u'NSInvalidArgumentException',
+	                    'reason': u'*** -[NSURL initFileURLWithPath:]: nil string parameter'},
+	 'Signal Info': {'address': 51755346L, 'code': u'#0', 'name': u'SIGABRT'},
+	 'System Info': {'architecture': 'X86_32',
+	                 'operating_system': 'IPHONE_SIMULATOR',
+	                 'os_build': u'13E28',
 	                 'os_version': u'7.1',
-	                 'timestamp': 1399235657L}}
+	                 'timestamp': 1405366563L}}
 ```
 
 Re-Generate Python Protocol Buffer Binding

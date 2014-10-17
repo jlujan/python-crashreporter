@@ -21,7 +21,12 @@ def pb_fields_to_dict(obj, ignore=None):
         raise Exception("Object not a ProtoBuf Object.")
 
     ignore = list() if ignore is None else ignore
-    return {k.name: v for k, v in obj.ListFields() if k.name not in ignore}
+    fields = []
+    for desc, val in obj.ListFields():
+        if desc.enum_type is not None:
+            val = desc.enum_type.values_by_number[val].name
+        fields.append((desc.name, val))
+    return {k: v for k, v in fields if k not in ignore}
 
 
 def get_summary(report):
